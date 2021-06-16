@@ -10,15 +10,15 @@
     <h2>주사위게임</h2>
     <script>
         'use strict';
-		const rand = Math.random();
-        const dice = Math.floor(rand * 6) + 1;
         while(true){
+			const rand = Math.random();
+			const dice = Math.floor(rand * 6) + 1;
             const number = prompt('주사위 숫자를 맞춰보세요.(1 ~ 6)');
             if(number == dice){
-                console.log('맞았습니다.');
+                alert(`주사위 숫자 : ${dice} \n맞았습니다.`);
                 break;
             }else{
-                console.log('틀렸습니다.');
+                alert('틀렸습니다.');
             }
         }
     </script>
