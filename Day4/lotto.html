@@ -59,23 +59,23 @@
 			}
 		}		
 		
-		console.log(`선택하신 로또 번호는 ${select} 입니다.`);
-		console.log(`이번주 로또번호는 ${lotto[0]},${lotto[1]},${lotto[2]},${lotto[3]},${lotto[4]},${lotto[5]} 이고, 보너스 번호는 ${lotto[6]} 입니다.`);
+		document.write(`<p>선택하신 로또 번호는 ${select} 입니다.</p>`);
+		document.write(`<p>이번주 로또번호는 ${lotto[0]},${lotto[1]},${lotto[2]},${lotto[3]},${lotto[4]},${lotto[5]} 이고, 보너스 번호는 ${lotto[6]} 입니다.</p>`);
 		
 		if(count==6){
-			console.log(`축하합니다. 1등입니다. ${count}개 숫자일치.`);
+			document.write(`\n축하합니다. 1등입니다. ${count}개 숫자일치.`);
 		} else if (count==5){
 			if(bonus){
-				console.log(`축하합니다. 2등입니다. ${count}개 숫자 + 보너스 숫자(${lotto[6]}) 일치.`);
+				document.write(`\n축하합니다. 2등입니다. ${count}개 숫자 + 보너스 숫자(${lotto[6]}) 일치.`);
 			} else {
-				console.log(`축하합니다. 3등입니다. ${count}개 숫자일치.`);
+				document.write(`\n축하합니다. 3등입니다. ${count}개 숫자일치.`);
 			}
 		} else if (count==4){
-			console.log(`축하합니다. 4등입니다. ${count}개 숫자일치.`);
+			document.write(`\n축하합니다. 4등입니다. ${count}개 숫자일치.`);
 		} else if (count==3){
-			console.log(`축하합니다. 5등입니다. ${count}개 숫자일치.`);
+			document.write(`\n축하합니다. 5등입니다. ${count}개 숫자일치.`);
 		} else {
-			console.log(`아쉽게도 낙첨되셨습니다.`);
+			document.write(`\n아쉽게도 낙첨되셨습니다.`);
 		}
     </script>
 </body>
