@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호 예측 프로그램</title>
+</head>
+<body>
+    <h2>로또번호 예측 프로그램</h2>
+    <script>
+        'use strict';
+        let lotto = [];
+		
+		for(let i = 0; i < 7; i++){
+			const rand = Math.random();
+            const com = lotto.push(Math.floor(rand * 45) + 1);
+			for(let a = 0; a < i; a++){
+				if (lotto[i] == lotto[a]) {
+                    lotto.pop();
+                    i--;  
+                }
+			}
+		}
+		
+		let select = [];
+		let idx = 0;
+		while(idx < 6){
+			select[idx] = Number(prompt(`1부터 45 사이의 번호 6개를 중복되지 않게 입력하세요. (${idx + 1}번째)` ));	
+			idx++;
+		}
+		
+		let count = 0;
+		let bonus = false;
+		for(let a = 0; a < 7; a++){
+			for(let b = 0; b < 6; b++){
+				if(lotto[a] == select[b]){
+					if(a==6){
+						bonus = true;
+					} else {
+						count++;
+					}
+				}
+			}
+		}		
+		
+		console.log(`선택하신 로또 번호는 ${select} 입니다.`);
+		console.log(`이번주 로또번호는 ${lotto[0]},${lotto[1]},${lotto[2]},${lotto[3]},${lotto[4]},${lotto[5]} 이고, 보너스 번호는 ${lotto[6]} 입니다.`);
+		
+		if(count==6){
+			console.log(`축하합니다. 1등입니다. ${count}개 숫자일치.`);
+		} else if (count==5){
+			if(bonus){
+				console.log(`축하합니다. 2등입니다. ${count}개 숫자 + 보너스 숫자(${lotto[6]}) 일치.`);
+			} else {
+				console.log(`축하합니다. 3등입니다. ${count}개 숫자일치.`);
+			}
+		} else if (count==4){
+			console.log(`축하합니다. 4등입니다. ${count}개 숫자일치.`);
+		} else if (count==3){
+			console.log(`축하합니다. 5등입니다. ${count}개 숫자일치.`);
+		} else {
+			console.log(`아쉽게도 낙첨되셨습니다.`);
+		}
+    </script>
+</body>
+</html>

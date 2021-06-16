@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보게임</title>
+</head>
+<body>
+    <h2>가위바위보게임</h2>
+    <script>
+        'use strict';
+        let play = ['가위', '바위', '보'];
+        
+        while(true){
+            
+            let rand = Math.random();
+            let com = Math.floor(rand * 3);
+            let user = prompt('가위, 바위, 보 중 하나를 입력하세요.');
+            let userSelect;
+
+            switch(user) {
+                case '가위':
+                    userSelect = 0;
+                    break;
+                case '바위':
+                    userSelect = 1;
+                    break;
+                case '보':
+                    userSelect = 2;
+                    break;
+            };        
+
+            let result = '컴퓨터 : ' + play[com] + ', ' + '유저 : ' + play[userSelect];
+
+            if((com == 0 && userSelect == 1) || (com == 1 && userSelect == 2) || (com == 2 && userSelect == 0)){
+                console.log(result);
+                console.log('이겼습니다. 게임을 종료합니다.');
+                break;
+            } else if(com == userSelect) {
+                console.log(result);
+                console.log('비겼습니다.');
+            } else {
+                console.log(result);
+                console.log('졌습니다.');
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
