@@ -34,15 +34,15 @@
             let result = '컴퓨터 : ' + play[com] + ', ' + '유저 : ' + play[userSelect];
 
             if((com == 0 && userSelect == 1) || (com == 1 && userSelect == 2) || (com == 2 && userSelect == 0)){
-                console.log(result);
-                console.log('이겼습니다. 게임을 종료합니다.');
+                alert(result + '\n"이겼습니다. 게임을 종료합니다."');
+                <!-- console.log('이겼습니다. 게임을 종료합니다.'); -->
                 break;
             } else if(com == userSelect) {
-                console.log(result);
-                console.log('비겼습니다.');
+                alert(result + '\n"비겼습니다."');
+                <!-- console.log('비겼습니다.'); -->
             } else {
-                console.log(result);
-                console.log('졌습니다.');
+                alert(result + '\n"졌습니다."');
+                <!-- console.log('졌습니다.'); -->
             }
         }
 
