@@ -25,9 +25,24 @@
 		
 		let select = [];
 		let idx = 0;
-		while(idx < 6){
-			select[idx] = Number(prompt(`1부터 45 사이의 번호 6개를 중복되지 않게 입력하세요. (${idx + 1}번째)` ));	
-			idx++;
+		var auto = confirm("로또 번호를 수동으로 선택하시겠습니까? \n(취소 선택시 번호 자동생성)");
+		if(auto == true){
+			while(idx < 6){
+				select[idx] = Number(prompt(`1부터 45 사이의 번호 6개를 중복되지 않게 입력하세요. (${idx + 1}번째)` ));	
+				idx++;
+			}
+		}
+		else if(auto == false){
+			for(let i = 0; i < 6; i++){
+				const rand = Math.random();
+				const com = select.push(Math.floor(rand * 45) + 1);
+				for(let d = 0; d < i; d++){
+					if (select[i] == select[d]) {
+						select.pop();
+						i--;  
+					}
+				}
+			}
 		}
 		
 		let count = 0;
