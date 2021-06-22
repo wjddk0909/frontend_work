@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900&display=swap&subset=chinese-simplified');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap');
+
+*{padding:0; margin:0;}
+ul, li{list-style:none;}
+
+.wrap{width:95%; max-width:1024px; margin:100px auto 0; font-family:'Noto Sans KR', sans-serif; font-size:16px;  color:#000; font-weight:400; outline:0; line-height:1.5;}
+h1{font-family:'Montserrat', sans-serif; font-size:40px; margin:20px 0;}
+h2{font-family:'Montserrat', sans-serif; padding:10px; background:#efefef;}
+ul{padding:20px 10px;}
+ul li{margin-bottom:15px;}
+ul li:last-child{margin-bottom:0;}
+.link{padding-left:10px; position:relative;}
+.link:before{content:""; display:block; width:3px; height:3px; background:#2c7db7; border-radius:50%; position:absolute; top:50%; left:0; margin-top:-1px;}
+.info{padding-left:10px;}
+.info p{padding-left:10px; position:relative; font-size:14px;}
+.info p:before{content:""; display:block; width:5px; height:1px; background:#333; border-radius:50%; position:absolute; top:50%; left:0;}
+a{color:#333; font-weight:600;}
