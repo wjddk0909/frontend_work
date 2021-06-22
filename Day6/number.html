@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>주민등록번호 유효성 체크 프로그램</title>
+</head>
+<body>
+    <h2>주민등록번호 유효성 체크 프로그램</h2>
+    <script>
+        'use strict';
+        const personal = prompt('주민번호를 숫자만 입력하세요');
+        document.write(`<p>입력하신 주민번호 : ${personal}</p>`);
+
+        const num1 = personal.substring(0, 8);
+        const num2 = personal.substring(8, 12);
+        const last = personal.charAt(12);
+
+        const arrNum1 = new Array();
+        const arrNum2 = new Array();
+
+        for(let i = 0; i<num1.length; i++){
+            arrNum1[i] = num1.charAt(i);
+        }
+        for(let i = 0; i<num2.length; i++){
+            arrNum2[i] = num2.charAt(i);
+        }
+        
+        // console.log(arrNum1);
+        // console.log(arrNum2);
+        // console.log(last);
+
+        let sumNum1 = 0;
+        let sumNum2 = 0;
+
+        for(let i=0; i<num1.length; i++){
+            sumNum1 += arrNum1[i] * (2+i);
+        }
+        for(let i=0; i<num2.length; i++){
+            sumNum2 += arrNum2[i] * (2+i);
+        }
+        
+        let total = sumNum1 + sumNum2;
+
+        // console.log(sumNum1);
+        // console.log(sumNum2);
+        // console.log(total);
+
+        if((11-(total%11))%10 == last){
+            alert('유효한 주민등록 번호입니다.');
+        } else {
+            alert('유효하지 않은 주민등록 번호입니다.');
+        }
+    </script>
+</body>
+</html>
